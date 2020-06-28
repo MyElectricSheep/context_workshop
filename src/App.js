@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./Home"
 import Admin from "./Admin"
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 
 const App = () => {
   return (
@@ -14,8 +14,10 @@ const App = () => {
           <Link to="/admin">Admin Page</Link>
         </li>
       </ul>
-      <Route exact path="/" component={Home} />
+      <Switch>
       <Route path="/admin" component={Admin} />
+      <Route exact path="/" component={Home} />
+      </Switch>
     </div>
   );
 };
